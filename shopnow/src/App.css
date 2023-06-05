@@ -1,0 +1,15 @@
+.mylcard{
+    padding: 0.5%;
+}
+
+.myscard{
+    background-color: #F8f9fa;
+    border: 1px solid blanchedalmond;
+    padding: 5%;
+    /* margin: 1%; */
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
