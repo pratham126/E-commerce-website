@@ -8,7 +8,8 @@ const data = {
             storage: '12gb/256gb',
             price: 54999,
             rating: 3.9,
-            reviews: 20
+            reviews: 20,
+            Stock: 21
         },
         {
             _id: '2',
@@ -18,7 +19,8 @@ const data = {
             storage: '8gb/256gb',
             price: 44999,
             rating: 4.1,
-            reviews: 30
+            reviews: 30,
+            Stock: 0
         },
         {
             _id: '3',
@@ -28,7 +30,8 @@ const data = {
             storage: '8gb/128',
             price: 34999,
             rating: 4.6,
-            reviews: 40
+            reviews: 40,
+            Stock: 27
         },
         {
             _id: '4',
@@ -46,7 +49,8 @@ const data = {
             image: 'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s9-plus-blue.jpg',
             storage: '8gb/128',
             price: 34999,
-            rating: 4.6
+            rating: 4.6,
+            Stock: 23
         },
         {
             _id: '6',
@@ -55,7 +59,8 @@ const data = {
             image: 'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s9-plus-blue.jpg',
             storage: '8gb/128',
             price: 34999,
-            rating: 4.6
+            rating: 4.6,
+            Stock: 23
         },
         {
             _id: '7',
@@ -64,7 +69,8 @@ const data = {
             image: 'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s9-plus-blue.jpg',
             storage: '8gb/128',
             price: 34999,
-            rating: 4.6
+            rating: 4.6,
+            Stock: 23
         }
     ]
 };

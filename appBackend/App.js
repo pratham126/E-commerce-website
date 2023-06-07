@@ -1,6 +1,5 @@
 import express from 'express';
 import data from './data.js';
-
 const app = express();
 
 app.get('/products', function(req, res){
@@ -8,8 +7,8 @@ app.get('/products', function(req, res){
 });
 
 app.get('/product/:id', function(req, res){
-    const a = data.products.find(product => product._id == req.params.id)
-    res.send(a.name);
+    const foundItem = data.products.find(product => product._id === req.params.id);
+        res.send(foundItem);
 });
 
 app.get('/', function(req, res){
