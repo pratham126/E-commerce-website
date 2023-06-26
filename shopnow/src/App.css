@@ -35,5 +35,6 @@ a {
 .bottom {
   position: absolute;
   bottom: 0;
-  right: 45%;
+  right: 40%;
+  left: 40%;
 }

@@ -1,5 +1,20 @@
+import bcrypt from 'bcryptjs';
+
 const data = {
-    products : [
+    users: [
+        {
+            name: 'Pratham',
+            email: 'admin@email.com',
+            password: bcrypt.hashSync('123456'),
+            isAdmin: true,
+        },
+        {
+            name: 'Sparsh',
+            email: 'Sparsh@email.com',
+            password: bcrypt.hashSync('123456'),
+        }
+    ],
+    products: [
         {
             name: 'Samsung galaxy S20+',
             display: 6.7,

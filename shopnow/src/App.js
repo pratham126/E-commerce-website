@@ -1,3 +1,5 @@
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomeScreen from './Screens/HomeScreen';
 import Product from './Screens/ProductScreen';
@@ -10,6 +12,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <BrowserRouter>
+      <ToastContainer position="bottom-center" limit={1} />
       <Header />
       <br />
       <br />
@@ -20,6 +23,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/signin" element={<SigninScreen />} />
         <Route path="/signup" element={<SignupScreen />} />
+        <Route path="/shipping" element={<Cart />} />
       </Routes>
       <Footer />
     </BrowserRouter>

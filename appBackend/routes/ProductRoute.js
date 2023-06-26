@@ -1,5 +1,5 @@
 import express from 'express';
-import Product from '../ProductModel.js';
+import Product from '../models/ProductModel.js';
 
 const ProductRoute = express.Router();
 
@@ -9,7 +9,7 @@ ProductRoute.get('/', async (req, res) => {
 });
 
 ProductRoute.get('/:id', async (req, res) => {
-  const foundItem = await Product.findOne({_id: req.params.id});
+  const foundItem = await Product.findOne({ _id: req.params.id });
   res.send(foundItem);
 });
 
