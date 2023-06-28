@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
-import {Store} from './Store'
-
+import {Store} from '../components/Store'
+import { Helmet } from 'react-helmet-async';
 const Cart = () => {
     const navigate = useNavigate();
     const {state, dispatch} = useContext(Store);
@@ -52,6 +52,9 @@ const Cart = () => {
                     <button type='button' onClick={()=> navigate('/signin?redirect=/shipping')} className='btn btn-primary' disabled={cart.cartItems.length === 0}>Proceed to Checkout</button>
             </div>
         </div>
+        <Helmet>
+        <title>Shopping Cart</title>
+      </Helmet>
     </div>
     )
 }

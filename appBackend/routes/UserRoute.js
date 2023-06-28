@@ -26,4 +26,30 @@ userRoutes.post(
   })
 );
 
+userRoutes.post(
+  '/signup',
+  expressAsyncHandler(async (req, res) => {
+    const { name, email, pswd } = req.body;
+    const AlreadyaUser = await User.findOne({ email: email });
+    if (AlreadyaUser) {
+      res.status(401).send({ message: 'User with this email already exists' });
+      return;
+    }
+    const newUser = new User({
+      name: name,
+      email: email,
+      password: bcrypt.hashSync(pswd),
+    });
+    const user = await newUser.save();
+    res.send({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+      token: generateToken(user),
+    });
+    return;
+  })
+);
+
 export default userRoutes;

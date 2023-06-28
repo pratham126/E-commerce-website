@@ -3,10 +3,11 @@ import { ToastContainer } from 'react-toastify';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomeScreen from './Screens/HomeScreen';
 import Product from './Screens/ProductScreen';
-import Cart from './components/Cart';
+import Cart from './Screens/CartScreen';
 import Header from './components/Header';
 import SigninScreen from './Screens/SigninScreen';
 import SignupScreen from './Screens/SignupScreen';
+import ShippingScreen from './Screens/ShippingScreen';
 import Footer from './components/Footer';
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/signin" element={<SigninScreen />} />
         <Route path="/signup" element={<SignupScreen />} />
-        <Route path="/shipping" element={<Cart />} />
+        <Route path="/shipping" element={<ShippingScreen />} />
       </Routes>
       <Footer />
     </BrowserRouter>

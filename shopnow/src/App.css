@@ -38,3 +38,13 @@ a {
   right: 40%;
   left: 40%;
 }
+
+.checkout-steps div{
+  color: #a0a0a0;
+  border-bottom: 0.2rem solid #a0a0a0;
+}
+
+.checkout-steps .active {
+  color: #0D6EFD;
+  border-bottom: 0.2rem solid #0D6EFD;
+}

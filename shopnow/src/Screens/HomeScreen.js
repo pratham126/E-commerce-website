@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from '../components/Card';
+import {Helmet} from 'react-helmet-async';
+
 const HomeScreen = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -12,6 +14,9 @@ const HomeScreen = () => {
   }, []);
   return (
     <div className="container-fluid">
+      <Helmet>
+        <title>Home Page</title>
+      </Helmet>
       <h1>Featured Products</h1>
       <div className="container-fluid mx-0 row">
         {products.map((item) => (
