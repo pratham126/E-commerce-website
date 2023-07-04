@@ -17,7 +17,7 @@ export default function ShippingScreen() {
   const Navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch({ type: 'Save_Shipping_address', payload: address });
+    dispatch({ type: 'SAVE_SHIPPING_ADDRESS', payload: address });
     localStorage.setItem('address', JSON.stringify(address));
     Navigate('/payment');
   };

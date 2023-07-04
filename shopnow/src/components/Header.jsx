@@ -6,9 +6,10 @@ const Header = () => {
   const { state, dispatch } = useContext(Store);
   const { cart, userInfo } = state;
   const HandleSignout = () => {
-    dispatch({ type: 'User_Signout' });
+    dispatch({ type: 'USER_SIGNOUT' });
     localStorage.removeItem('userInfo');
     localStorage.removeItem('address');
+    localStorage.removeItem('paymentMethod');
   };
   return (
     <header>

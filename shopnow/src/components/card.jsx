@@ -16,7 +16,7 @@ const Card = (props) => {
       alert('Could not add item: item got out of stock.')
       return;
     }
-    dispatch({type: 'Update_cart' , payload: {...props.obj, quantity: quantity}})
+    dispatch({type: 'UPDATE_CART' , payload: {...props.obj, quantity: quantity}})
   }
   return (
     <div className="mb-1 mylcard text-center container-fluid col-xxxl-1 col-xxl-2 col-lg-3 col-md-4 col-sm-6">

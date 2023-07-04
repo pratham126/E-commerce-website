@@ -9,6 +9,9 @@ import SigninScreen from './Screens/SigninScreen';
 import SignupScreen from './Screens/SignupScreen';
 import ShippingScreen from './Screens/ShippingScreen';
 import Footer from './components/Footer';
+import PaymentScreen from './Screens/PaymentScreen';
+import PlaceOrderScreen from './Screens/PlaceOrderScreen';
+import OrderScreen from './Screens/OrderScreen';
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
         <Route path="/signin" element={<SigninScreen />} />
         <Route path="/signup" element={<SignupScreen />} />
         <Route path="/shipping" element={<ShippingScreen />} />
+        <Route path="/payment" element={<PaymentScreen />} />
+        <Route path="/placeorder" element={<PlaceOrderScreen />} />
+        <Route path="/order/:id" element={<OrderScreen />} />
       </Routes>
       <Footer />
     </BrowserRouter>

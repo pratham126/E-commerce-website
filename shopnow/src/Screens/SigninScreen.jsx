@@ -21,7 +21,7 @@ export default function SigninScreen() {
         email: email,
         password: pswd,
       });
-      dispatch({ type: 'User_Signin', payload: data });
+      dispatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
       Navigate(redirect || '/');
     } catch (err) {

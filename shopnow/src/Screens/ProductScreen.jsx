@@ -25,7 +25,7 @@ const Product = () => {
       return;
     }
     contextDispatch({
-      type: 'Update_cart',
+      type: 'UPDATE_CART',
       payload: { ...product, quantity: quantity },
     });
   };

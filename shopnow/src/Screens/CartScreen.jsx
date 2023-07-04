@@ -7,13 +7,13 @@ const Cart = () => {
     const {state, dispatch} = useContext(Store);
     const {cart} = state;
     const IncItem = (item) =>{
-        dispatch({type:"Update_cart" , payload:{...item, quantity: item.quantity+1}})
+        dispatch({type:"UPDATE_CART" , payload:{...item, quantity: item.quantity+1}})
     }
     const DecItem = (item) =>{
-        dispatch({type:"Update_cart" , payload:{...item, quantity: item.quantity-1}})
+        dispatch({type:"UPDATE_CART" , payload:{...item, quantity: item.quantity-1}})
     }
     const delItem = (item) =>{
-        dispatch({type: "Remove_from_cart", payload:{...item}})
+        dispatch({type: "REMOVE_FROM_CART", payload:{...item}})
     }
     if(cart.cartItems.length === 0)
         return <span><h1>Shopping Cart</h1><br /><p className="text-center">Your cart is empty <br/><strong><Link to='/'>Go Shopping</Link></strong></p></span>

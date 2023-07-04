@@ -24,7 +24,7 @@ export default function SignupScreen() {
         return;
       }
       const { data } = await axios.post('api/users/signup', signup);
-      dispatch({ type: 'User_Signin', payload: data });
+      dispatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
       Navigate(redirect || '/');
     } catch (err) {
