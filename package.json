@@ -1,0 +1,21 @@
+{
+  "name": "e-commerce-website",
+  "version": "1.0.0",
+  "description": "My complete e-commerce web app",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd appbackend && npm install && cd ../shopnow && npm install && npm run build",
+    "start": "node appBackend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pratham126/E-commerce-website.git"
+  },
+  "author": "Pratham126",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pratham126/E-commerce-website/issues"
+  },
+  "homepage": "https://github.com/pratham126/E-commerce-website#readme"
+}

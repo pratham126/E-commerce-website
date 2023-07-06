@@ -5,6 +5,7 @@ import seedRouter from './routes/ResetdbRoute.js';
 import ProductRoute from './routes/ProductRoute.js';
 import userRouter from './routes/UserRoute.js';
 import orderRouter from './routes/OrderRoute.js';
+import path from 'path';
 
 dotenv.config();
 const app = express();
@@ -25,6 +26,13 @@ app.use('/api/orders', orderRouter);
 app.get('/api/keys/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
 });
+
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '/shopnow/build')));
+
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, '/shopnow/build/index.html'))
+);
 
 app.listen('4000', () =>
   console.log('Server is active on http://localhost:4000')
