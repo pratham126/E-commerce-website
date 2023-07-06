@@ -12,6 +12,8 @@ import Footer from './components/Footer';
 import PaymentScreen from './Screens/PaymentScreen';
 import PlaceOrderScreen from './Screens/PlaceOrderScreen';
 import OrderScreen from './Screens/OrderScreen';
+import OrderHistoryScreen from './Screens/OrderHistoryScreen';
+import ProfileScreen from './Screens/ProfileScreen';
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
         <Route path="/payment" element={<PaymentScreen />} />
         <Route path="/placeorder" element={<PlaceOrderScreen />} />
         <Route path="/order/:id" element={<OrderScreen />} />
+        <Route path="/orderhistory" element={<OrderHistoryScreen />} />
+        <Route path="/profile" element={<ProfileScreen />} />
       </Routes>
       <Footer />
     </BrowserRouter>
