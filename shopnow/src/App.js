@@ -14,8 +14,17 @@ import PlaceOrderScreen from './Screens/PlaceOrderScreen';
 import OrderScreen from './Screens/OrderScreen';
 import OrderHistoryScreen from './Screens/OrderHistoryScreen';
 import ProfileScreen from './Screens/ProfileScreen';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:4000")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message));
+  }, []);
+  console.log(message);
   return (
     <BrowserRouter>
       <ToastContainer position="bottom-center" limit={1} />

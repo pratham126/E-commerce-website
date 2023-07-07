@@ -5,18 +5,28 @@ import seedRouter from './routes/ResetdbRoute.js';
 import ProductRoute from './routes/ProductRoute.js';
 import userRouter from './routes/UserRoute.js';
 import orderRouter from './routes/OrderRoute.js';
-import path from 'path';
+import cors from 'cors';
+// import path from 'path';
 
 dotenv.config();
 const app = express();
 
+const corsOptions = {
+  origin: 'http://localhost:3000',
+};
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors(corsOptions));
 
 mongoose
   .connect(process.env.Mongodb_URL)
-  .then(() => console.log('Connected to db'))
-  .catch((err) => console.log(err.message));
+  .then(() => {
+    const PORT = process.env.PORT || 8000;
+    app.listen(PORT, () => {
+      console.log(`App is Listening on PORT ${PORT}`);
+    });
+  })
+  .catch((err) => console.log(err));
 
 app.use('/product/reset', seedRouter);
 app.use('/product', ProductRoute);
@@ -27,13 +37,17 @@ app.get('/api/keys/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
 });
 
-const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, '/shopnow/build')));
+app.get('/', (req, res) => {
+  res.status(201).json({ message: 'Connected to Backend!' });
+});
 
-app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, '/shopnow/build/index.html'))
-);
+// const __dirname = path.resolve();
+// app.use(express.static(path.join(__dirname, '/shopnow/build')));
 
-app.listen('4000', () =>
-  console.log('Server is active on http://localhost:4000')
-);
+// app.get('*', (req, res) =>
+//   res.sendFile(path.join(__dirname, '/shopnow/build/index.html'))
+// );
+
+// app.listen('4000', () =>
+//   console.log('Server is active on http://localhost:4000')
+// );

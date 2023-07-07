@@ -4,9 +4,11 @@
   "description": "My complete e-commerce web app",
   "main": "index.js",
   "scripts": {
-    "build": "cd appbackend && npm install && cd ../shopnow && npm install && npm run build",
-    "start": "node appBackend/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install-server": "cd appBackend && npm install",
+    "start-server": "cd appBackend && node Server.js",
+    "install-client": "cd shopnow && npm install",
+    "build-client": "cd shopnow && npm run build",
+    "start-client": "cd shopnow && npm run start"
   },
   "repository": {
     "type": "git",
