@@ -3,6 +3,7 @@ import { Store } from '../components/Store';
 import { Helmet } from 'react-helmet-async';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import LoadingBox from '../components/LoadingBox';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -123,6 +124,7 @@ const ProfileScreen = () => {
           <button className="btn btn-primary" type="Submit">
             Save
           </button>
+          {Userloading && <LoadingBox />}
         </div>
       </form>
     </div>
