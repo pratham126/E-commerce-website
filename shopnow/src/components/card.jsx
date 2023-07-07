@@ -11,7 +11,7 @@ const Card = (props) => {
   const HandleAddedItem = async() => {
     const itemExists = cart.cartItems.find(item => item._id === props.obj._id)
     const quantity = itemExists ? itemExists.quantity+1 : 1; 
-    const {data} = await axios('/product/' + props.obj._id);
+    const {data} = await axios('https://e-commerce-website-backend-iawo.onrender.com/product/' + props.obj._id);
     if(data.Stock < quantity){
       alert('Could not add item: item got out of stock.')
       return;

@@ -7,7 +7,7 @@ const HomeScreen = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const incomingData = await axios.get('/product');
+      const incomingData = await axios.get('https://e-commerce-website-backend-iawo.onrender.com/product');
       setProducts(incomingData.data);
     };
     fetchData();

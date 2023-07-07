@@ -9,7 +9,7 @@ const Product = () => {
   const [product, setProduct] = useState({});
   useEffect(() => {
     const fetchData = async () => {
-      const data = await axios.get('/product/' + param.id);
+      const data = await axios.get('https://e-commerce-website-backend-iawo.onrender.com/product/' + param.id);
       setProduct(data.data);
     };
     fetchData();
@@ -19,7 +19,7 @@ const Product = () => {
   const HandleAddedItem = async () => {
     const ItemExists = cart.cartItems.find((item) => item._id === product._id);
     const quantity = ItemExists ? ItemExists.quantity + 1 : 1;
-    const { data } = await axios('/product/' + product._id);
+    const { data } = await axios('https://e-commerce-website-backend-iawo.onrender.com/product/' + product._id);
     if (data.Stock < quantity) {
       alert('Cannot add item to cart: Item got out of Stock');
       return;

@@ -32,7 +32,7 @@ const OrderHistoryScreen = () => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
-        const { data } = await axios.get('/api/orders/mine', {
+        const { data } = await axios.get('https://e-commerce-website-backend-iawo.onrender.com/api/orders/mine', {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         dispatch({ type: 'FETCH_SUCCESS', payload: data });

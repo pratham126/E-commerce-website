@@ -23,7 +23,7 @@ export default function SignupScreen() {
         toast.error('Password and Confirm Password field does not match');
         return;
       }
-      const { data } = await axios.post('api/users/signup', signup);
+      const { data } = await axios.post('https://e-commerce-website-backend-iawo.onrender.com/api/users/signup', signup);
       dispatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
       Navigate(redirect || '/');

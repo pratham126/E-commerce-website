@@ -25,7 +25,7 @@ const PlaceOrderScreen = () => {
     try {
       dispatch({ type: 'CREATE_REQUEST' });
       const { data } = await Axios.post(
-        '/api/orders',
+        'https://e-commerce-website-backend-iawo.onrender.com/api/orders',
         {
           cartItems: cart.cartItems,
           shippingAddress: cart.shippingAddress,
