@@ -6,7 +6,7 @@ import ProductRoute from './routes/ProductRoute.js';
 import userRouter from './routes/UserRoute.js';
 import orderRouter from './routes/OrderRoute.js';
 import cors from 'cors';
-// import path from 'path';
+import path from 'path';
 
 dotenv.config();
 const app = express();
@@ -41,12 +41,12 @@ app.get('/', (req, res) => {
   res.status(201).json({ message: 'Connected to Backend!' });
 });
 
-// const __dirname = path.resolve();
-// app.use(express.static(path.join(__dirname, '/shopnow/build')));
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '/shopnow/build')));
 
-// app.get('*', (req, res) =>
-//   res.sendFile(path.join(__dirname, '/shopnow/build/index.html'))
-// );
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, '/shopnow/build/index.html'))
+);
 
 // app.listen('4000', () =>
 //   console.log('Server is active on http://localhost:4000')

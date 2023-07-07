@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/pratham126/E-commerce-website/issues"
   },
-  "homepage": "https://github.com/pratham126/E-commerce-website#readme"
+  "homepage": "https://github.com/pratham126/E-commerce-website#readme",
+  "dependencies": {}
 }
