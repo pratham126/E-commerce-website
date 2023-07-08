@@ -14,17 +14,17 @@ import PlaceOrderScreen from './Screens/PlaceOrderScreen';
 import OrderScreen from './Screens/OrderScreen';
 import OrderHistoryScreen from './Screens/OrderHistoryScreen';
 import ProfileScreen from './Screens/ProfileScreen';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 function App() {
-  const [message, setMessage] = useState('');
+  // const [message, setMessage] = useState('');
 
-  useEffect(() => {
-    fetch('https://e-commerce-website-backend-iawo.onrender.com/')
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  }, []);
-  console.log(message);
+  // useEffect(() => {
+  //   fetch('https://e-commerce-website-backend-iawo.onrender.com/')
+  //     .then((res) => res.json())
+  //     .then((data) => setMessage(data.message));
+  // }, []);
+  // console.log(message);
   return (
     <BrowserRouter>
       <ToastContainer position="bottom-center" limit={1} />
@@ -33,9 +33,9 @@ function App() {
       <br />
       <br />
       <Routes>
-        <Route path="https://e-commerce-website-frontend-uv84.onrender.com/" element={<HomeScreen />}></Route>
+        <Route path="/" element={<HomeScreen />}></Route>
         <Route path="/product/:id" element={<Product />}></Route>
-        <Route path="https://e-commerce-website-frontend-uv84.onrender.com/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/signin" element={<SigninScreen />} />
         <Route path="/signup" element={<SignupScreen />} />
         <Route path="/shipping" element={<ShippingScreen />} />
