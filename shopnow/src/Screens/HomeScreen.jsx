@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Card from '../components/Card';
-import {Helmet} from 'react-helmet-async';
+import Card from '../Components/Card';
+import { Helmet } from 'react-helmet-async';
 
 const HomeScreen = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const incomingData = await axios.get('https://e-commerce-website-backend-iawo.onrender.com/product');
+      const incomingData = await axios.get(
+        'https://e-commerce-website-backend-iawo.onrender.com/product'
+      );
       setProducts(incomingData.data);
     };
     fetchData();

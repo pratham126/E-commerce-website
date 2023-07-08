@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useReducer } from 'react';
-import CheckoutSteps from '../components/CheckoutSteps';
+import CheckoutSteps from '../Components/CheckoutSteps';
 import { Helmet } from 'react-helmet-async';
-import { Store } from '../components/Store';
+import { Store } from '../Components/Store';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Axios from 'axios';
-import LoadingBox from '../components/LoadingBox';
+import LoadingBox from '../Components/LoadingBox';
 
 const reducer = (state, action) => {
   switch (action.type) {

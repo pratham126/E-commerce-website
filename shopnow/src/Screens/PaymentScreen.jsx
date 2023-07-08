@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Store } from '../components/Store';
-import CheckoutSteps from '../components/CheckoutSteps';
+import { Store } from '../Components/Store';
+import CheckoutSteps from '../Components/CheckoutSteps';
 import { Helmet } from 'react-helmet-async';
 export default function ShippingScreen() {
   const { state, dispatch } = useContext(Store);
-  const { cart: {shippingAddress, paymentMethod} } = state;
+  const {
+    cart: { shippingAddress, paymentMethod },
+  } = state;
   const [PaymentMethod, setPaymentMethod] = useState(paymentMethod || 'paypal');
   const Navigate = useNavigate();
   const handleSubmit = async (e) => {

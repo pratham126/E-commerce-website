@@ -2,7 +2,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'react-toastify';
 import { useContext, useState } from 'react';
-import { Store } from '../components/Store';
+import { Store } from '../Components/Store';
 import axios from 'axios';
 
 export default function SignupScreen() {
@@ -23,7 +23,10 @@ export default function SignupScreen() {
         toast.error('Password and Confirm Password field does not match');
         return;
       }
-      const { data } = await axios.post('https://e-commerce-website-backend-iawo.onrender.com/api/users/signup', signup);
+      const { data } = await axios.post(
+        'https://e-commerce-website-backend-iawo.onrender.com/api/users/signup',
+        signup
+      );
       dispatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
       Navigate(redirect || '/');

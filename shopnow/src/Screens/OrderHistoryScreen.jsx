@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useReducer } from 'react';
-import { Store } from '../components/Store';
-import LoadingBox from '../components/LoadingBox';
-import MessageBox from '../components/MessageBox';
+import { Store } from '../Components/Store';
+import LoadingBox from '../Components/LoadingBox';
+import MessageBox from '../Components/MessageBox';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -32,9 +32,12 @@ const OrderHistoryScreen = () => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
-        const { data } = await axios.get('https://e-commerce-website-backend-iawo.onrender.com/api/orders/mine', {
-          headers: { Authorization: `Bearer ${userInfo.token}` },
-        });
+        const { data } = await axios.get(
+          'https://e-commerce-website-backend-iawo.onrender.com/api/orders/mine',
+          {
+            headers: { Authorization: `Bearer ${userInfo.token}` },
+          }
+        );
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: err.message });

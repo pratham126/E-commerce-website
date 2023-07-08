@@ -1,9 +1,9 @@
 import React, { useContext, useReducer, useState } from 'react';
-import { Store } from '../components/Store';
+import { Store } from '../Components/Store';
 import { Helmet } from 'react-helmet-async';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import LoadingBox from '../components/LoadingBox';
+import LoadingBox from '../Components/LoadingBox';
 
 const reducer = (state, action) => {
   switch (action.type) {

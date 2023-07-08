@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useReducer } from 'react';
-import LoadingBox from '../components/LoadingBox';
+import LoadingBox from '../Components/LoadingBox';
 import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Store } from '../components/Store';
+import { Store } from '../Components/Store';
 import Axios from 'axios';
 import { Helmet } from 'react-helmet-async';
-import MessageBox from '../components/MessageBox';
+import MessageBox from '../Components/MessageBox';
 import { Link } from 'react-router-dom';
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
 
@@ -85,9 +85,12 @@ const OrderScreen = () => {
     const fetchOrder = async () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await Axios.get(`https://e-commerce-website-backend-iawo.onrender.com/api/orders/${orderId}`, {
-          headers: { authorization: `Bearer ${userInfo.token}` },
-        });
+        const { data } = await Axios.get(
+          `https://e-commerce-website-backend-iawo.onrender.com/api/orders/${orderId}`,
+          {
+            headers: { authorization: `Bearer ${userInfo.token}` },
+          }
+        );
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: err.message });
@@ -99,9 +102,12 @@ const OrderScreen = () => {
       if (successPay) dispatch({ type: 'PAY_RESET' });
     } else {
       const loadPaypalScript = async () => {
-        const { data: clientId } = await Axios.get('https://e-commerce-website-backend-iawo.onrender.com/api/keys/paypal', {
-          headers: { authorization: `Bearer ${userInfo.token}` },
-        });
+        const { data: clientId } = await Axios.get(
+          'https://e-commerce-website-backend-iawo.onrender.com/api/keys/paypal',
+          {
+            headers: { authorization: `Bearer ${userInfo.token}` },
+          }
+        );
         paypalDispatch({
           type: 'resetOptions',
           value: { 'client-id': clientId, currency: 'USD' },
@@ -219,7 +225,10 @@ const OrderScreen = () => {
                   <div className="row">
                     <div className="col-md-6">Order Total</div>
                     <div className="col-md-6">
-                      <strong>Rs. {order.totalPrice} (${(order.totalPrice / 82).toFixed(2)})</strong>
+                      <strong>
+                        Rs. {order.totalPrice} ($
+                        {(order.totalPrice / 82).toFixed(2)})
+                      </strong>
                     </div>
                   </div>
                 </div>

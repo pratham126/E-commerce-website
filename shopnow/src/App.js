@@ -4,11 +4,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomeScreen from './Screens/HomeScreen';
 import Product from './Screens/ProductScreen';
 import Cart from './Screens/CartScreen';
-import Header from './components/Header';
+import Header from './Components/Header';
 import SigninScreen from './Screens/SigninScreen';
 import SignupScreen from './Screens/SignupScreen';
 import ShippingScreen from './Screens/ShippingScreen';
-import Footer from './components/Footer';
+import Footer from './Components/Footer';
 import PaymentScreen from './Screens/PaymentScreen';
 import PlaceOrderScreen from './Screens/PlaceOrderScreen';
 import OrderScreen from './Screens/OrderScreen';
@@ -17,10 +17,10 @@ import ProfileScreen from './Screens/ProfileScreen';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fetch("https://e-commerce-website-backend-iawo.onrender.com/")
+    fetch('https://e-commerce-website-backend-iawo.onrender.com/')
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
   }, []);

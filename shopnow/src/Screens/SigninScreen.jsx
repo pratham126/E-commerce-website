@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Store } from '../components/Store';
+import { Store } from '../Components/Store';
 import { toast } from 'react-toastify';
 import { Helmet } from 'react-helmet-async';
 
@@ -17,10 +17,13 @@ export default function SigninScreen() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post('https://e-commerce-website-backend-iawo.onrender.com/api/users/signin', {
-        email: email,
-        password: pswd,
-      });
+      const { data } = await axios.post(
+        'https://e-commerce-website-backend-iawo.onrender.com/api/users/signin',
+        {
+          email: email,
+          password: pswd,
+        }
+      );
       dispatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
       Navigate(redirect || '/');
