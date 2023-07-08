@@ -35,7 +35,7 @@ function App() {
       <Routes>
         <Route path="https://e-commerce-website-frontend-uv84.onrender.com/" element={<HomeScreen />}></Route>
         <Route path="/product/:id" element={<Product />}></Route>
-        <Route path="/cart" element={<Cart />} />
+        <Route path="https://e-commerce-website-frontend-uv84.onrender.com/cart" element={<Cart />} />
         <Route path="/signin" element={<SigninScreen />} />
         <Route path="/signup" element={<SignupScreen />} />
         <Route path="/shipping" element={<ShippingScreen />} />

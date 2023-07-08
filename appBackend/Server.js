@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: 'https://e-commerce-website-frontend-uv84.onrender.com/',
+  origin: 'https://e-commerce-website-frontend-uv84.onrender.com',
 };
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

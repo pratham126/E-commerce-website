@@ -29,7 +29,7 @@ const Cart = () => {
         <p className="text-center">
           Your cart is empty <br />
           <strong>
-            <Link to="/">Go Shopping</Link>
+            <Link to="https://e-commerce-website-frontend-uv84.onrender.com/">Go Shopping</Link>
           </strong>
         </p>
       </span>
@@ -55,7 +55,7 @@ const Cart = () => {
                     />
                   </div>
                   <div className="col-md-3">
-                    <Link to={'/product/' + item._id} className="col-md-3">
+                    <Link to={'https://e-commerce-website-frontend-uv84.onrender.com/product/' + item._id} className="col-md-3">
                       {item.name}
                     </Link>
                   </div>
@@ -98,7 +98,7 @@ const Cart = () => {
             <hr />
             <button
               type="button"
-              onClick={() => navigate('/signin?redirect=/shipping')}
+              onClick={() => navigate('https://e-commerce-website-frontend-uv84.onrender.com/signin?redirect=/shipping')}
               className="btn btn-primary"
               disabled={cart.cartItems.length === 0}
             >
