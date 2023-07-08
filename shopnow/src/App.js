@@ -33,7 +33,7 @@ function App() {
       <br />
       <br />
       <Routes>
-        <Route path="/" element={<HomeScreen />}></Route>
+        <Route path="https://e-commerce-website-frontend-uv84.onrender.com/" element={<HomeScreen />}></Route>
         <Route path="/product/:id" element={<Product />}></Route>
         <Route path="/cart" element={<Cart />} />
         <Route path="/signin" element={<SigninScreen />} />
