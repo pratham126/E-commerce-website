@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomeScreen from './Screens/HomeScreen';
 import Product from './Screens/ProductScreen';
 import Cart from './Screens/CartScreen';
-import Header from './Components/Header.jsx';
+import Header from './Components/Header';
 import SigninScreen from './Screens/SigninScreen';
 import SignupScreen from './Screens/SignupScreen';
 import ShippingScreen from './Screens/ShippingScreen';
