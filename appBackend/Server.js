@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import seedRouter from './routes/ResetdbRoute.js';
+import seedRouter from './routes/SeedRoute.js';
 import ProductRoute from './routes/ProductRoute.js';
 import userRouter from './routes/UserRoute.js';
 import orderRouter from './routes/OrderRoute.js';
@@ -28,7 +28,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-app.use('/product/reset', seedRouter);
+app.use('/api/seed', seedRouter);
 app.use('/product', ProductRoute);
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);

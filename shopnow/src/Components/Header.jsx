@@ -28,17 +28,17 @@ const Header = () => {
                 </nav>
                 <ul className="dropdown-menu">
                   <li className="dropdown-item">
-                    <Link to="/profile">User Profile</Link>
+                    <Link to="/profile/">User Profile</Link>
                   </li>
                   <li className="dropdown-item">
-                    <Link to="/orderhistory">Order History</Link>
+                    <Link to="/orderhistory/">Order History</Link>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
                   <li className="dropdown-item">
                     <Link
-                      to={cart ? '/signin' : "/signin?redirect=/shipping"}
+                      to={cart ? '/signin/' : "/signin?redirect=/shipping/"}
                       onClick={HandleSignout}
                     >
                       Sign out
@@ -47,7 +47,7 @@ const Header = () => {
                 </ul>
               </div>
             ) : (
-              <Link className="navbar-nav nav-link me-auto" to="/signin">
+              <Link className="navbar-nav nav-link me-auto" to="/signin/">
                 Sign in
               </Link>
             )}
@@ -71,7 +71,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link ms-1" to="/cart">
+                <Link className="nav-link ms-1" to="/cart/">
                   Cart
                   <span className="mx-1 badge rounded-pill text-bg-danger">
                     {cart.cartItems.length > 0 &&
@@ -88,7 +88,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link ms-1" to="/">
+                <Link className="nav-link ms-1" to="https://goo.gl/maps/QC5odG2mqvqDLwfH7/">
                   Location
                 </Link>
               </li>
