@@ -24,7 +24,7 @@ export default function SignupScreen() {
         return;
       }
       const { data } = await axios.post(
-        'https://e-commerce-website-backend-iawo.onrender.com/api/users/signup',
+        '/api/users/signup',
         signup
       );
       dispatch({ type: 'USER_SIGNIN', payload: data });

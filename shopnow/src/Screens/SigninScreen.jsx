@@ -18,7 +18,7 @@ export default function SigninScreen() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        'https://e-commerce-website-backend-iawo.onrender.com/api/users/signin',
+        '/api/users/signin',
         {
           email: email,
           password: pswd,

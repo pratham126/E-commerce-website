@@ -33,7 +33,7 @@ const ProfileScreen = () => {
       } else {
         dispatch({ type: 'USER_REQUEST' });
         const { data } = await axios.put(
-          'https://e-commerce-website-backend-iawo.onrender.com/api/users/profile',
+          '/api/users/profile',
           {
             name: profile.name,
             email: profile.email,

@@ -64,7 +64,7 @@ const OrderScreen = () => {
       try {
         dispatch({ type: 'PAY_REQUEST' });
         const { data } = await Axios.put(
-          `https://e-commerce-website-backend-iawo.onrender.com/api/orders/${order._id}/pay`,
+          `/api/orders/${order._id}/pay`,
           details,
           {
             headers: { authorization: `Bearer ${userInfo.token}` },
@@ -86,7 +86,7 @@ const OrderScreen = () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
         const { data } = await Axios.get(
-          `https://e-commerce-website-backend-iawo.onrender.com/api/orders/${orderId}`,
+          `/api/orders/${orderId}`,
           {
             headers: { authorization: `Bearer ${userInfo.token}` },
           }
@@ -103,7 +103,7 @@ const OrderScreen = () => {
     } else {
       const loadPaypalScript = async () => {
         const { data: clientId } = await Axios.get(
-          'https://e-commerce-website-backend-iawo.onrender.com/api/keys/paypal',
+          '/api/keys/paypal',
           {
             headers: { authorization: `Bearer ${userInfo.token}` },
           }

@@ -10,7 +10,7 @@ const Product = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await axios.get(
-        'https://e-commerce-website-backend-iawo.onrender.com/product/' +
+        '/product/' +
           param.id
       );
       setProduct(data.data);
@@ -23,7 +23,7 @@ const Product = () => {
     const ItemExists = cart.cartItems.find((item) => item._id === product._id);
     const quantity = ItemExists ? ItemExists.quantity + 1 : 1;
     const { data } = await axios(
-      'https://e-commerce-website-backend-iawo.onrender.com/product/' +
+      '/product/' +
         product._id
     );
     if (data.Stock < quantity) {
